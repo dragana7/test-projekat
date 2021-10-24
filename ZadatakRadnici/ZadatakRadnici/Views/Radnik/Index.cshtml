@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Baza zaposlenih</h2>
+
+
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                @*<th>Id</th>*@
+                <th>Ime</th>
+                <th>Prezime</th>
+                <th>Adresa</th>
+                <th>Neto iznos</th>
+                @*<th>Porez</th>
+                    <th>Pio - teret zaposlenog</th>
+                    <th>Zdravstvo - teret zaposlenog</th>
+                    <th>Nezaposlenost - teret zaposlenog</th>
+                    <th>Pio - teret poslodavca</th>
+                    <th>Zdravstvo - teret poslodavca</th>*@
+                <th>Bruto iznos</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (System.Data.DataRow dataRow in ViewBag.radnik.Rows)
+                {
+                    <tr>
+                        @*<td>@dataRow["Id"]</td>*@
+                        <td>@dataRow["Ime"]</td>
+                        <td>@dataRow["Prezime"]</td>
+                        <td>@dataRow["Adresa"]</td>
+                        <td>@dataRow["NetoIznos"]</td>
+                        @*<td>@dataRow["Porez"]</td>
+                            <td>@dataRow["PioNaTeretZaposlenog"]</td>
+                            <td>@dataRow["ZdravstvoNaTeretZaposlenog"]</td>
+                            <td>@dataRow["NezaposlenostNaTeretZaposlenog"]</td>
+                            <td>@dataRow["PioNaTeretPoslodavca"]</td>
+                            <td>@dataRow["ZdravstvoNaTeretPoslodavca"]</td>*@
+                        <td>@dataRow["BrutoIznos"]</td>
+                        <td>
+                            <a href="/Radnik/PrikaziRadnika?Id=@dataRow["Id"]" class="btn btn-info btn-sm">Detalji</a>
+                            <a href="/Radnik/IzmeniRadnika?Id=@dataRow["Id"]" class="btn btn-primary btn-sm">Promeniti</a>
+                            <a href="/Radnik/ObrisiRadnika?Id=@dataRow["Id"]" class="btn btn-danger btn-sm">Izbrisati</a>
+
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

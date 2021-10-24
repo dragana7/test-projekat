@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "PrikaziRadnika";
+}
+
+
+<div>
+    @{
+        foreach (System.Data.DataRow dataRow in ViewBag.radnik.Rows)
+        {
+            <div>
+                <h2>@dataRow["Ime"] @dataRow["Prezime"]</h2>
+                <div>
+                    <p class="col-xs-5">
+                        Adresa:
+                    </p>
+                    <p class="col-xs-7">
+                        @dataRow["Adresa"]
+                    </p>
+
+                    <p class="col-xs-5">
+                        Neto zarada:
+                    </p>
+                    <p class="col-xs-7">
+                        @dataRow["NetoIznos"]
+                    </p>
+
+                    <p class="col-xs-12"><b><i>Troskovi na teret zaposlenog</i></b></p>
+
+                    <p class="col-xs-5">
+                        Porez:
+                    </p>
+                    <p class="col-xs-7">
+                        @dataRow["Porez"]
+                    </p>
+
+                    <p class="col-xs-5">
+                        PIO:
+                    </p>
+                    <p class="col-xs-7">
+                        @dataRow["PioNaTeretZaposlenog"]
+                    </p>
+                    <p class="col-xs-5">
+                        Zdravstveno osiguranje:
+                    </p>
+                    <p class="col-xs-7">
+                        @dataRow["ZdravstvoNaTeretZaposlenog"]
+                    </p>
+
+                    <p class="col-xs-5">
+                        Nezaposlenost:
+                    </p>
+                    <p class="col-xs-7">
+                        @dataRow["NezaposlenostNaTeretZaposlenog"]
+                    </p>
+
+                    <p class="col-xs-12"><b><i>Troskovi na teret poslodavca</i></b></p>
+                    <p class="col-xs-5">
+                        PIO:
+                    </p>
+                    <p class="col-xs-7">
+                        @dataRow["PioNaTeretPoslodavca"]
+                    </p>
+                    <p class="col-xs-5">
+                        Zdravstveno osiguranje:
+                    </p>
+                    <p class="col-xs-7">
+                        @dataRow["ZdravstvoNaTeretPoslodavca"]
+                    </p>
+
+                    <p class="col-xs-12"><b><i>Ukupna zarada</i></b></p>
+                    <p class="col-xs-5">
+                        Bruto zarada:
+                    </p>
+                    <p class="col-xs-7">
+                        @dataRow["BrutoIznos"]
+                    </p>
+
+                    <div class="col-xs-12">
+                        <a href="/Radnik/IzmeniRadnika?Id=@dataRow["Id"]" class="btn btn-primary btn-sm">Promeniti</a>
+                        <a href="/Radnik/ObrisiRadnika?Id=@dataRow["Id"]" class="btn btn-danger btn-sm">Izbrisati</a>
+                    </div>
+                </div>
+
+            </div>
+        }
+    }
+</div>

@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "IzmeniRadnika";
+}
+
+<h2>Azurirati podatke o zaposlenom</h2>
+<div class="container">
+    <div>
+        @{
+            foreach (System.Data.DataRow dataRow in ViewBag.radnikDetalji.Rows)
+            {
+                <div class="col-lg-6">
+                    <form method="post">
+                        <div class="form-group">
+                            <label for="ime">Ime</label>
+                            <input type="text" class="form-control" value="@dataRow["Ime"]" name="ime" id="ime" placeholder="Unesite ime" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="prezime">Prezime</label>
+                            <input type="text" class="form-control" value="@dataRow["Prezime"]" name="prezime" id="prezimeime" placeholder="Unesite prezime" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="adresa">Adresa</label>
+                            <input type="text" class="form-control" value="@dataRow["Adresa"]" name="adresa" id="adresa" placeholder="Unesite adresu" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="netoPlata">Neto plata</label>
+                            <input type="text" class="form-control" value="@dataRow["NetoIznos"]" name="netoIznos" id="netoPlata" placeholder="Unesite neto platu" required />
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success btn-lg">Sacuvaj</button>
+                        </div>
+                    </form>
+                </div>
+            }
+        }
+    </div>
+</div>

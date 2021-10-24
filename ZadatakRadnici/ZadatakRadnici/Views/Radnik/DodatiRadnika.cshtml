@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "DodatiRadnika";
+}
+
+
+<div class="container">
+    <div>
+        <h2>Dodati novog zaposlenog</h2>
+
+        <div class="col-lg-6">
+            <form method="post">
+                <div class="form-group">
+                    <label for="ime">Ime</label>
+                    <input type="text" class="form-control" name="ime" id="ime" placeholder="Unesite ime" required />
+
+                </div>
+                <div class="form-group">
+                    <label for="prezime">Prezime</label>
+                    <input type="text" class="form-control" name="prezime" id="prezimeime" placeholder="Unesite prezime" required />
+                </div>
+                <div class="form-group">
+                    <label for="adresa">Adresa</label>
+                    <input type="text" class="form-control" name="adresa" id="adresa" placeholder="Unesite adresu" required />
+
+                </div>
+                <div class="form-group">
+                    <label for="netoPlata">Neto plata</label>
+                    <input type="text" class="form-control" name="netoIznos" id="netoPlata" placeholder="Unesite neto platu" required />
+
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success btn-lg">Sacuvaj</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
